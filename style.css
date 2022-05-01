@@ -8,7 +8,7 @@
 
 ul {
     list-style: none;
-    font-size: 30px;
+    font-size: 20px;
     font-style: italic;
     font-weight: 700;
 }
@@ -20,9 +20,40 @@ a {
 body {
     /* height: 100vh; */
     background-size: cover;
+    /* background-color: #cccccc; */
+    /* background-size: 100% 100%; */
     background-image: url(./background.jpg);
     background-repeat: no-repeat;
     background-position: center center fixed;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    /* border-bottom: 2px solid #FFF; */
+    box-shadow: 1px 1px 10px 1px #FFF;
+    /* border-bottom: 15px ridge #FFF; */
+    margin-bottom: 45px;
+}
+
+header ul{
+    display: flex;
+}
+
+header ul li{
+    padding: 5px;
+    /* border-bottom: 2px dashed #FFF; */
+}
+
+header ul li a {
+    transition: 300ms;
+}
+
+header ul li a:hover {
+    color: #FFF;
+    text-decoration: underline;
 }
 
 .container {
@@ -31,13 +62,36 @@ body {
 
 .container .name h1 {
     font-size: 60px;
+    /* margin-top: 50px; */
 }
 
 .container .name h4, h5 {
     font-size: 25px;
 }
 
-.flex {
+#arrow {
+    font-size: 30px;
+    margin-top: 50px;
+    cursor: pointer;
+    animation: blink 1s steps(5, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+.rotate {
+    transform: rotate(180deg);
+    transition: 300ms;
+}
+
+.active {
+    display: block !important;
+}
+
+/* .flex {
     display: flex;
 }
 
@@ -45,7 +99,12 @@ body {
     border: 1px solid #000;
     margin: 15px;
     flex-basis: 100%;
+    background-color: lightgray;
 }
+
+.flex img {
+    max-width: 300px;
+} */
 
 #about p {
     max-width: 600px;
@@ -54,13 +113,61 @@ body {
 
 .form {
     width: 40%;
-    margin: 0 auto;
+    margin: 30px auto;
+    /* margin-top: 30px; */
+    /* border: thick double #FFF; */
+    /* box-shadow: 1px 1px 10px 1px #FFF; */
+    /* padding: 25px; */
 }
 
 .form input {
+    color: #000;
     width: 50%;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px 0px 0px 10px;
 }
 
 .form button {
     width: 15%;
+    padding: 5px 10px;
+    background: linear-gradient(to right, #c09717 50%, #9c551b 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: #FFF;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px 10px 10px 0px;
+    transition: 300ms;
+    margin-left: -5px;
+}
+
+.form button:hover {
+    background-position: left bottom;
+}
+
+@media screen and (max-width: 810px){
+    .form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px){
+    header {
+        justify-content: center;
+    }
+    
+    .container .name h1 {
+        font-size: 35px;
+    }
+    
+    .container .name h4, h5 {
+        font-size: 17px;
+    }
+
+    #about p {
+        max-width: 80%;
+        text-align: justify;
+    }
 }

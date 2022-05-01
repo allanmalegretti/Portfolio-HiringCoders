@@ -17,14 +17,14 @@
 <body>
     <header>
         <div>
-            <img src="" alt="AA">
+            <img style="display: none" src="" alt="AA">
         </div>
         <ul>
             <li>
                 <a target="_blank" href="https://github.com/allanmalegretti/">Github</a>
             </li>
             <li>
-                <a target="_blank" href="https://www.linkedin.com/in/allan-alegretti/">Linkdein</a>
+                <a target="_blank" href="https://www.linkedin.com/in/allan-alegretti/">LinkdeIn</a>
             </li>
             <li>
                 <a target="_blank" href="mailto:allanalegretti@gmail.com">E-Mail</a>
@@ -39,10 +39,11 @@
                     <h5>Control and Automation Engineer</h5>
             </div>
 
-            <div id="arrow">
-                <i class="fa-solid fa-angles-down"></i>
+            <div onclick="displayAbout()" id="arrow">
+                <i id="animation" class="fa-solid fa-angles-down"></i>
             </div>
-            <div class="flex">
+
+            <!-- <div class="flex">
                 <div>
                     <img src="https://thecatapi.com/api/images/get?format=src&type=gif" alt="">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
@@ -57,15 +58,15 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore laboriosam alias voluptates.
                     </p>
                 </div>
-            </div>
+            </div> -->
 
-            <!-- <div id="about">
+            <div style="display: none" id="about">
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt perspiciatis impedit labore illum eum
                     suscipit, nostrum accusamus in esse optio eligendi rem necessitatibus voluptatum quas exercitationem
                     dolorum aliquam nisi explicabo. Ipsa atque voluptas ex id laborum harum ducimus impedit.
                 </p>
-            </div> -->
+            </div>
 
             <div class="form">
                 <div>
@@ -80,6 +81,16 @@
             </div>
         </section>
     </main>
+
+    <script>
+        function displayAbout() {
+            var arrow = document.getElementById('animation');
+            arrow.classList.toggle('rotate');
+
+            var display = document.getElementById('about');
+            display.classList.toggle('active');
+        }
+    </script>
 </body>
 
 </html>
